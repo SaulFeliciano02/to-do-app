@@ -70,7 +70,8 @@
                     .then(response => {
                         if(response.status === 200)
                         {
-                            this.$emit('itemchanged')
+                            this.$emit('itemchanged');
+                            this.closeModal();
                         }
                     })
                     .catch(error => {
