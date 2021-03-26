@@ -45,7 +45,7 @@
             return {
                 items: [],
                 isModalVisible: false,
-                updateItem: null
+                updateItem: null,
             }
         },
         methods: {
@@ -62,10 +62,12 @@
             showModal: function (value) {
                 this.isModalVisible = true;
                 this.updateItem = value;
+                this.unupdatedName = value;
                 console.log(value)
             },
             closeModal() {
                 this.isModalVisible = false;
+                this.getItemList();
             },
             updateTaskName() {
                 axios.put('api/item/update/' + this.updateItem.id, {
@@ -171,4 +173,12 @@
         color: orange;
         outline: none;
     }
+
+    .btn-green {
+        color: white;
+        background: dodgerblue;
+        border: 1px solid blue;
+        border-radius: 2px;
+    }
+
 </style>
